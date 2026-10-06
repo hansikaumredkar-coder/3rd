@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Parisienne&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --wine: #5a1f32;
+  --deep: #260d18;
+  --cream: #fff8f0;
+  --rose: #c77b91;
+  --soft: #f5dfe3;
+  --text: #3b1724;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(199,123,145,0.18), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(255,220,225,0.12), transparent 30%),
+    linear-gradient(135deg, #260d18, #5a1f32 55%, #32101f);
+  color: var(--cream);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ---------- SPARKLES ---------- */
+
+.sparkles::before,
+.sparkles::after {
+  content: "✦  ·  ♡  ·  ✦  ·  ˚  ·  ♡  ·  ✦";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  color: rgba(255, 230, 235, 0.35);
+  font-size: 18px;
+  letter-spacing: 35px;
+  line-height: 100px;
+  z-index: 0;
+  animation: float 8s ease-in-out infinite;
+}
+
+.sparkles::after {
+  transform: translateY(50px);
+  opacity: 0.4;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* ---------- MAIN ---------- */
+
+.website {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 70px 25px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+.page.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- OPENING ---------- */
+
+.tiny {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  opacity: 0.6;
+  margin-bottom: 25px;
+}
+
+.opening-card {
+  width: min(650px, 94vw);
+  padding: 65px 35px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(12px);
+  border-radius: 30px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+}
+
+.hearts {
+  font-size: 22px;
+  letter-spacing: 12px;
+  color: #f3b5c4;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(65px, 12vw, 125px);
+  line-height: 0.75;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
+h1 span {
+  font-family: "Parisienne", cursive;
+  color: #efb1c1;
+  font-size: 0.9em;
+}
+
+.subtitle {
+  margin-top: 35px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  opacity: 0.85;
+}
+
+.bottom-text {
+  margin-top: 30px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+/* ---------- BUTTONS ---------- */
+
+button {
+  border: none;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+}
+
+.opening-card button,
+.envelope button {
+  margin-top: 35px;
+  padding: 15px 25px;
+  border-radius: 50px;
+  background: var(--cream);
+  color: var(--wine);
+  font-size: 13px;
+  transition: 0.3s ease;
+}
+
+.opening-card button:hover,
+.envelope button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.opening-card button span {
+  margin-left: 10px;
+}
+
+/* ---------- SECTIONS ---------- */
+
+.section-number {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(50px, 8vw, 90px);
+  line-height: 0.85;
+  font-weight: 500;
+  margin-bottom: 45px;
+}
+
+h2 i {
+  font-family: "Parisienne", cursive;
+  font-style: normal;
+  color: #efb1c1;
+}
+
+/* ---------- QUOTE ---------- */
+
+.quote-card {
+  width: min(650px, 92vw);
+  padding: 45px;
+  background: var(--cream);
+  color: var(--text);
+  border-radius: 5px;
+  transform: rotate(-1deg);
+  box-shadow: 15px 20px 50px rgba(0,0,0,0.25);
+}
+
+.quote-mark {
+  font-family: Georgia, serif;
+  font-size: 70px;
+  line-height: 30px;
+  color: var(--rose);
+}
+
+.quote-card p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  line-height: 1.4;
+}
+
+.quote-card small {
+  display: block;
+  margin-top: 20px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.next-button {
+  margin-top: 40px;
+  padding: 13px 22px;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 50px;
+  background: transparent;
+  color: white;
+  transition: 0.3s;
+}
+
+.next-button:hover {
+  background: white;
+  color: var(--wine);
+}
+
+/* ---------- LOVE CARDS ---------- */
+
+.instruction {
+  margin-top: -25px;
+  margin-bottom: 30px;
+  font-size: 12px;
+  opacity: 0.55;
+}
+
+.love-grid {
+  width: min(700px, 94vw);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.love-grid button {
+  min-height: 120px;
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.13);
+  color: white;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  transition: 0.3s;
+}
+
+.love-grid button:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-5px) rotate(-1deg);
+}
+
+#message {
+  min-height: 35px;
+  margin-top: 25px;
+  color: #f3b5c4;
+  font-family: "Parisienne", cursive;
+  font-size: 28px;
+}
+
+/* ---------- TIMELINE ---------- */
+
+.timeline {
+  width: min(650px, 94vw);
+  text-align: left;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  background: rgba(255,255,255,0.25);
+}
+
+.timeline-item {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.dot {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--wine);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.timeline-item h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.timeline-item p {
+  opacity: 0.65;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* ---------- ENVELOPE ---------- */
+
+.envelope {
+  width: min(500px, 90vw);
+  padding: 60px 30px;
+  background: #f6e5dc;
+  color: var(--text);
+  border-radius: 8px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+}
+
+.seal {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--wine);
+  color: #fff;
+  font-size: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.envelope h2 {
+  color: var(--text);
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+.envelope p {
+  opacity: 0.6;
+}
+
+.letter {
+  display: none;
+  margin-top: 30px;
+}
+
+.letter.show {
+  display: block;
+  animation: letterOpen 0.8s ease;
+}
+
+@keyframes letterOpen {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.paper {
+  width: min(650px, 92vw);
+  padding: 50px 45px;
+  background: #fffaf2;
+  color: var(--text);
+  text-align: left;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+.paper .to {
+  font-family: "Parisienne", cursive;
+  font-size: 30px;
+  color: var(--rose);
+}
+
+.paper h2 {
+  color: var(--text);
+  font-size: 55px;
+  margin: 15px 0 25px;
+}
+
+.paper p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.final-love {
+  font-family: "Parisienne", cursive !important;
+  font-size: 32px !important;
+  color: var(--rose);
+  margin-top: 30px;
+}
+
+.signature {
+  text-align: right;
+  font-family: "Parisienne", cursive !important;
+  font-size: 28px !important;
+}
+
+.restart {
+  margin-top: 25px;
+  padding: 10px 18px;
+  background: transparent;
+  color: white;
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+  .page {
+    padding: 45px 18px;
+  }
+
+  .opening-card {
+    padding: 50px 20px;
+  }
+
+  h1 {
+    font-size: 70px;
+  }
+
+  h2 {
+    font-size: 55px;
+  }
+
+  .quote-card {
+    padding: 30px 22px;
+  }
+
+  .quote-card p {
+    font-size: 21px;
+  }
+
+  .love-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .love-grid button {
+    min-height: 100px;
+    font-size: 18px;
+  }
+
+  .paper {
+    padding: 35px 25px;
+  }
+
+  .paper h2 {
+    font-size: 45px;
+  }
+
+  .paper p {
+    font-size: 19px;
+  }
+}
