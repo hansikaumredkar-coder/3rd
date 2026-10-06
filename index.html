@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Happy Monthsary, Baby ♡</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="sparkles"></div>
+
+  <main class="website">
+
+    <!-- OPENING -->
+    <section class="page active" id="page1">
+
+      <p class="tiny">a tiny corner of the internet made for you</p>
+
+      <div class="opening-card">
+
+        <div class="hearts">♡ ♡ ♡</div>
+
+        <h1>
+          happy<br>
+          <span>monthsary</span>
+        </h1>
+
+        <p class="subtitle">
+          for my favourite person ♡
+        </p>
+
+        <button onclick="nextPage()">
+          enter our little world
+          <span>→</span>
+        </button>
+
+      </div>
+
+      <p class="bottom-text">
+        made with a little too much love
+      </p>
+
+    </section>
+
+
+    <!-- OUR LITTLE WORLD -->
+    <section class="page" id="page2">
+
+      <div class="section-number">
+        01 / our little world
+      </div>
+
+      <h2>
+        just you<br>
+        <i>& me</i>
+      </h2>
+
+      <div class="quote-card">
+
+        <div class="quote-mark">“</div>
+
+        <p>
+          Somewhere between all the random conversations,
+          silly jokes and ordinary days, you became one of
+          my favourite parts of life.
+        </p>
+
+        <small>
+          — for my baby ♡
+        </small>
+
+      </div>
+
+      <button class="next-button" onclick="nextPage()">
+        keep going →
+      </button>
+
+    </section>
+
+
+    <!-- THINGS I LOVE -->
+    <section class="page" id="page3">
+
+      <div class="section-number">
+        02 / little things
+      </div>
+
+      <h2>
+        things I<br>
+        <i>adore</i> about you
+      </h2>
+
+      <p class="instruction">
+        tap the little cards ♡
+      </p>
+
+      <div class="love-grid">
+
+        <button onclick="showMessage('your smile ♡')">
+          your smile
+        </button>
+
+        <button onclick="showMessage('your silly side ♡')">
+          your silly side
+        </button>
+
+        <button onclick="showMessage('the way you care ♡')">
+          your heart
+        </button>
+
+        <button onclick="showMessage('your voice ♡')">
+          your voice
+        </button>
+
+        <button onclick="showMessage('the way you make me laugh ♡')">
+          your jokes
+        </button>
+
+        <button onclick="showMessage('literally just YOU ♡')">
+          everything
+        </button>
+
+      </div>
+
+      <div id="message"></div>
+
+      <button class="next-button" onclick="nextPage()">
+        next →
+      </button>
+
+    </section>
+
+
+    <!-- MONTHSARY DIARY -->
+    <section class="page" id="page4">
+
+      <div class="section-number">
+        03 / our diary
+      </div>
+
+      <h2>
+        little pieces<br>
+        <i>of us</i>
+      </h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+
+          <div class="dot">♡</div>
+
+          <div>
+            <h3>month one</h3>
+            <p>
+              The beginning of something that slowly
+              became really special.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="dot">♡</div>
+
+          <div>
+            <h3>month two</h3>
+            <p>
+              More conversations, more laughs,
+              and more reasons to smile.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="dot">♡</div>
+
+          <div>
+            <h3>this month</h3>
+            <p>
+              Still us. Still silly. Still making
+              little memories together.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <button class="next-button" onclick="nextPage()">
+        I have a letter for you →
+      </button>
+
+    </section>
+
+
+    <!-- LETTER -->
+    <section class="page" id="page5">
+
+      <div class="envelope" id="envelope">
+
+        <div class="seal">
+          ♡
+        </div>
+
+        <h2>
+          open this,<br>
+          <i>baby</i>
+        </h2>
+
+        <p>
+          there's something inside
+        </p>
+
+        <button onclick="openLetter()">
+          open my letter
+        </button>
+
+      </div>
+
+
+      <div class="letter" id="letter">
+
+        <div class="paper">
+
+          <p class="to">
+            to my baby ♡
+          </p>
+
+          <h2>
+            happy monthsary
+          </h2>
+
+          <p>
+            I don't think I say it enough, but I'm
+            really grateful for you.
+          </p>
+
+          <p>
+            Thank you for all the tiny moments that
+            somehow become my favourite memories —
+            the laughs, the random conversations,
+            the teasing and all the little things
+            that are just ours.
+          </p>
+
+          <p>
+            I hope we keep making ridiculous memories,
+            annoying each other and finding new reasons
+            to smile together.
+          </p>
+
+          <p>
+            I don't need anything perfect.
+            I just want more little moments with you.
+          </p>
+
+          <p class="final-love">
+            happy monthsary, baby ♡
+          </p>
+
+          <p class="signature">
+            — Hansika
+          </p>
+
+        </div>
+
+      </div>
+
+      <button
+        class="restart"
+        onclick="restart()"
+      >
+        read it again ♡
+      </button>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
